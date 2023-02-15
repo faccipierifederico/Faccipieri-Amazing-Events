@@ -66,9 +66,15 @@ main .main-form{
     font-size: 18px;
 }
 
+/*                COMIENZO DE DETAILS                    */
+
 .details-list li{
-    padding: 2%;
+    padding: 1em;
     list-style-type: none;
+    width: 33%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .details-div{
@@ -80,16 +86,15 @@ main .main-form{
     background: none !important;
 }
 
+main div img{
+    border-radius: 100px;
+}
+
+/*                FIN DE DETAILS                    */
+
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
 
-/* table{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-} */
-
 .table-th{
-    padding: 1.5em;
     background-color: antiquewhite;
     text-transform: uppercase;
 }
