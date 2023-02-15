@@ -5,9 +5,12 @@
 }
 
 .title-header{
+    color: antiquewhite;
+    letter-spacing: 1em;
     padding: 2% 0;
     display: flex;
     justify-content: center;
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
 }
 
 .sotial-network {
@@ -22,4 +25,40 @@
   font-size: 1.5em;
   text-align: center;
   color: black;
+}
+
+main .contact-form{
+    padding-left: 5%;
+}
+
+main .d-flex .div-form{
+    padding: 2%;
+    color: brown;
+}
+
+main .d-flex div span{
+    color: brown;
+    background-color: lightgray;
+}
+
+main .main-form{
+    height: 65vh;
+}
+
+.form-check-input{
+    background-color: black;
+}
+
+.active{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details-list li{
+    padding: 2%;
+    list-style-type: none;
+}
+
+.details-div{
+    border: none;
 }
