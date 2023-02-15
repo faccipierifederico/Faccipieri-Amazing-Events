@@ -13,6 +13,8 @@
     background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
 }
 
+/*           ACÁ COMIENZA EL FOOTER         */
+
 footer{
     background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
 }
@@ -35,17 +37,19 @@ footer div{
   color: beige;
 }
 
+/*           FIN DEL FOOTER         */
+
 main .contact-form{
     padding-left: 5%;
 }
 
 main .d-flex .div-form{
     padding: 2%;
-    color: brown;
+    color: black;
 }
 
 main .d-flex div span{
-    color: brown;
+    color: black;
     background-color: lightgray;
 }
 
@@ -71,10 +75,23 @@ main .main-form{
     border: none;
 }
 
-table{
+.details-span{
+    font-weight: bold;
+    background: none !important;
+}
+
+/*           ACÁ COMIENZA LA TABLA DE STATS         */
+
+/* table{
     display: flex;
     flex-direction: column;
     width: 100vw;
+} */
+
+.table-th{
+    padding: 1.5em;
+    background-color: antiquewhite;
+    text-transform: uppercase;
 }
 
 th{
@@ -88,7 +105,8 @@ td{
 }
 
 td, tr{
-    border-bottom: 1px solid black;
-    padding: 30px;
-    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 1em;
 }
+
+/*           FIN DE LA TABLA DE STATS         */
