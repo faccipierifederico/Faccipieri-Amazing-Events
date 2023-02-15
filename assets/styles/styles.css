@@ -13,18 +13,26 @@
     background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
 }
 
+footer{
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
+}
+
 .sotial-network {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 2em;
-    margin-top: 2em;
+    padding: 1em 0;
+    color: beige;
+}
+
+footer div{
+    margin-top: 1em;
 }
 
 .sotial-network i{
   font-size: 1.5em;
   text-align: center;
-  color: black;
+  color: beige;
 }
 
 main .contact-form{
@@ -61,4 +69,26 @@ main .main-form{
 
 .details-div{
     border: none;
+}
+
+table{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+th{
+    width: 99vw;
+    text-align: center;
+}
+
+td{
+    width: 33vw;
+    text-align: center;
+}
+
+td, tr{
+    border-bottom: 1px solid black;
+    padding: 30px;
+    border-collapse: collapse;
 }
