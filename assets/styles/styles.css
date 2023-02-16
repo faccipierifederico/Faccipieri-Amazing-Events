@@ -4,16 +4,15 @@
     margin: 0;
 }
 
-.title-header{
+/*           ACÁ COMIENZA EL HEADER            */
+
+.text-center{
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
     color: antiquewhite;
     letter-spacing: 1em;
     padding: 2% 0;
-    display: flex;
-    justify-content: center;
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
 }
 
-/*           ACÁ COMIENZA EL NAV            */
 .nav-link:hover{
     transition: 1s;
     background-color: cadetblue;
@@ -41,7 +40,7 @@ footer{
 
 .sotial-network-p{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     padding: 1em 0;
     color: beige;
