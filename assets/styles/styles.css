@@ -7,35 +7,47 @@
 /*           ACÁ COMIENZA EL HEADER            */
 
 .text-center{
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
-    color: antiquewhite;
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
+    background-position: bottom;
+    background-size: cover;
+    color: rgba(255, 208, 1, 0.466);
     letter-spacing: 1em;
     padding: 2% 0;
 }
 
 .nav-link:hover{
     transition: 1s;
-    background-color: cadetblue;
+    background-color: rgba(255, 208, 1, 0.466);
     color: black;
 }
 
 .active{
     text-transform: uppercase;
+    color: rgba(255, 208, 1, 0.466) !important;
+    text-shadow: 1px 1px 1px black;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /*           ACÁ COMIENZA EL FOOTER         */
 
 footer{
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
+    background-position: bottom;
+    background-size: cover;
 }
 
 .sotial-network {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     padding: 1em 0;
-    color: beige;
+    color: rgba(255, 208, 1, 0.466);
+}
+
+.sotial-network i{
+    padding: 0 1em;
 }
 
 .sotial-network-p{
@@ -43,7 +55,7 @@ footer{
     justify-content: center;
     width: 100%;
     padding: 1em 0;
-    color: beige;
+    color: rgba(255, 208, 1, 0.466);
     flex-wrap: wrap;
 }
 
@@ -54,10 +66,48 @@ footer div{
 .sotial-network i{
   font-size: 1.5em;
   text-align: center;
-  color: beige;
+  color: rgba(255, 208, 1, 0.466);
 }
 
 /*           FIN DEL FOOTER         */
+
+
+/*            CATEGORIES            */
+
+.form-check-input{
+    background-color: rgb(196, 161, 4);
+}
+
+.form-check-input:checked {
+    background-color: black;
+    border-color: black;
+}
+
+/*          FIN CATEGORIES          */
+
+/*          CARDS                   */
+
+.card{
+    background-color: black;
+    border: none;
+}
+
+.card h5{
+    color:rgba(253, 215, 43, 0.671)
+}
+
+.card-text{
+    color: rgba(255, 208, 1, 0.466);
+    padding: 1em 0;
+}
+
+/*         FIN CARDS                   */
+
+/*          COMIENZA EL CONTACT         */
+
+.form-title{
+    text-align: center;
+}
 
 main .contact-form{
     padding-left: 5%;
@@ -77,59 +127,65 @@ main .main-form{
     height: 65vh;
 }
 
-.form-check-input{
-    background-color: black;
+label{
+    color: rgb(167, 137, 1);
 }
 
-.active{
-    font-weight: bold;
-    font-size: 18px;
+input::placeholder {
+    opacity: 0.4 !important;
+    color: black !important;
 }
+
+
+/*                  FIN DEL CONTACT                    */
 
 /*                COMIENZO DE DETAILS                    */
 
-.details-list li{
-    padding: 1em;
-    list-style-type: none;
-    width: 33%;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 5px;
-}
-
 .details-div{
-    border: none;
+    display: flex;
+    flex-direction: column;
 }
 
-.details-span{
-    font-weight: bold;
-    background: none !important;
+.details-div ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
 }
 
-main div img{
-    border-radius: 100px;
+.details-div ul li{
+    color:rgb(196, 161, 4);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em 3em;
+    width: 50%;
 }
 
 /*                FIN DE DETAILS                    */
 
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
 
+table tr{
+    display: flex;
+    width: 99vw;
+}
+
 .table-th{
-    background-color: antiquewhite;
+    background-color: #000 !important;
+    color: rgba(253, 215, 43, 0.671);
     text-transform: uppercase;
 }
 
 th{
     width: 99vw;
+    border: 1px solid black;
     text-align: center;
 }
 
 td{
     width: 33vw;
     text-align: center;
-}
-
-td, tr{
     border: 1px solid black;
     padding: 1em;
 }
@@ -138,7 +194,7 @@ td, tr{
 
 .navbar-toggler{
     color: red;
-    background-color: aqua;
+    background-color: rgb(167, 137, 1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,6 +211,16 @@ td, tr{
 
 @media only screen and (max-width: 991px) {
     .nav-link{
-        color: cadetblue;
+        color: black;
+    }
+
+    td{
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .details-div ul li{
+        width: 100%;
     }
 }
