@@ -118,6 +118,11 @@ main .d-flex .div-form{
     color: black;
 }
 
+.div-buttons{
+    padding-left: 5% !important;
+
+}
+
 main .d-flex div span{
     color: black;
     background-color: lightgray;
@@ -207,6 +212,7 @@ td{
     .footer-span{
         display: none;
     }
+
 }
 
 @media only screen and (max-width: 991px) {
@@ -217,6 +223,7 @@ td{
     td{
         width: 100vw;
     }
+
 }
 
 @media only screen and (max-width: 1110px) {
