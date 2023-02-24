@@ -128,10 +128,6 @@ main .d-flex div span{
     background-color: lightgray;
 }
 
-main .main-form{
-    height: 65vh;
-}
-
 label{
     color: rgb(167, 137, 1);
 }
