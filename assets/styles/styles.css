@@ -204,8 +204,7 @@ td{
 .new-div{
     background-color: #000;
     color:rgba(253, 215, 43, 0.671);
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 /*              MEDIA QUERIES                   */
