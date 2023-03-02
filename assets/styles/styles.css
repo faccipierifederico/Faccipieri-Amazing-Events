@@ -193,6 +193,11 @@ input::placeholder {
 
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
 
+.h2-stats{
+    text-align: center;
+    padding: 3% 0 1% 0;
+}
+
 table tr{
     display: flex;
     width: 99vw;
@@ -201,7 +206,6 @@ table tr{
 .table-th{
     background-color: #000 !important;
     color: rgba(253, 215, 43, 0.671);
-    text-transform: uppercase;
 }
 
 th{
@@ -214,7 +218,7 @@ td{
     width: 33vw;
     text-align: center;
     border: 1px solid black;
-    padding: 1em;
+    padding: 1em !important;
 }
 
 /*           FIN DE LA TABLA DE STATS         */
