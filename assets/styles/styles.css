@@ -173,20 +173,37 @@ input::placeholder {
     flex-direction: column;
 }
 
+.h2-details{
+    font-size: 2em;
+    text-align: center;
+    padding: 1% 0;
+}
+
+.img-details{
+    margin: 1% 1% 0 1%;
+}
+
 .details-div ul{
     display: flex;
     flex-wrap: wrap;
     margin-top: 2em;
+    padding-left: 0 !important;
 }
 
 .details-div ul li{
     color:rgb(196, 161, 4);
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 1em 3em;
+    padding: 1em 0 !important;
     width: 50%;
+    border: 1px solid white;
+}
+
+.p-details{
+    color:rgb(196, 161, 4);
+    text-align: center;
 }
 
 /*                FIN DE DETAILS                    */
@@ -246,6 +263,7 @@ td{
 .h2-radius{
     border-radius: 25px 25px 0 0;
 }
+
 
 /*              MEDIA QUERIES                   */
 

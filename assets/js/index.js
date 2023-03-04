@@ -12,7 +12,7 @@ function cardsCreate (array) {
                         <p class="new-div">Summary of the event: ${event.description}</p>
                         <div class="d-flex flex-column align-items-center"> 
                         <p class="new-div">Event price: ${event.price} dollars</p>
-                        <a href="./details.html" class="btn btn-outline-warning w-75 btn-details">Go to details ➔</a>
+                        <a href="./details.html?_id=${event._id}" class="btn btn-outline-warning w-75 btn-details">Go to details ➔</a>
                         </div>`
         fragment.appendChild(div)
    }
