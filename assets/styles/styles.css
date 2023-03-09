@@ -17,6 +17,13 @@
     margin: 0;
 }
 
+.text-center3{
+    font-weight: 600;
+    color: red;
+    padding: 2% 0;
+    margin: 0;
+}
+
 .search-div{
     padding-top: 0 !important;
 }
@@ -161,6 +168,10 @@ input::placeholder {
 
 .form-label{
     color:rgb(167, 137, 1);
+}
+
+.fitler2{
+    display: none;
 }
 
 

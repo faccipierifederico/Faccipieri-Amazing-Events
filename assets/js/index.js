@@ -1,88 +1,121 @@
+// CREATE CARDS CON UNA FUNCIÓN
+
 const indexDate = Date.parse(data.currentDate);
 
-let container = document.getElementById('div-index');
-
-function cardsCreate (array) {
-    let fragment = document.createDocumentFragment();
-    for (let event of array) {
-        let div = document.createElement('div')
-        div.classList.add('new-div', 'new-div2', 'd-flex', 'flex-column', 'col-10', 'col-sm-10', 'col-md-4', 'col-lg-3')
-        div.innerHTML = `<h2 class="text-center h2-radius">${event.name}</h2>
+function cardsCreate(array, idContainer) {
+  let container = document.getElementById(idContainer);
+  container.innerHTML = "";
+  let fragment = document.createDocumentFragment();
+  if (array == '') {
+    container.innerHTML = `<h2 class="text-center3">Are you sure? The name of the event does not exist! Try again</h2>`;
+  } else {
+  for (let event of array) {
+    let div = document.createElement("div");
+    div.classList.add(
+      "new-div",
+      "new-div2",
+      "d-flex",
+      "flex-column",
+      "col-10",
+      "col-sm-10",
+      "col-md-4",
+      "col-lg-3"
+    );
+    div.innerHTML = `<h2 class="text-center h2-radius">${event.name}</h2>
                         <img class="h-75 img-cards" src="${event.image}" width="100%"></img>
                         <p class="new-div">Summary of the event: ${event.description}</p>
                         <div class="d-flex flex-column align-items-center"> 
                         <p class="new-div">Event price: ${event.price} dollars</p>
                         <a href="./details.html?_id=${event._id}" class="btn btn-outline-warning w-75 btn-details">Go to details ➔</a>
-                        </div>`
-        fragment.appendChild(div)
-   }
-   return fragment;
+                        </div>`;
+    fragment.appendChild(div);
+  }
+  container.appendChild(fragment);
+}
 }
 
-container.appendChild(cardsCreate(data.events))
+cardsCreate(data.events, "div-index");
 
-// LO QUE FUNCIONA SIN UNA FUNCIÓN
-
-// let container = document.getElementById('div-index');
-// let fragment = document.createDocumentFragment();
-
-// for (let event of data.events) {
-//        let div = document.createElement('div')
-//        div.classList.add('border', 'new-div', 'd-flex', 'flex-column', 'col-10', 'col-sm-10', 'col-md-4', 'col-lg-3')
-//        div.innerHTML = `<h2 class="text-center">${event.name}</h2>`
-//        div.innerHTML += `<img class="h-75" src="${event.image}" width="100%"></img>`
-//        div.innerHTML += `<p class="new-div">Description of the event: ${event.description}</p>`
-//        div.innerHTML += `<p class="new-div">Event price: ${event.price} dollars</p>`
-//        fragment.appendChild(div)
-//    }
-
-// container.appendChild(fragment);
-
-// FIN DEL QUE FUNCIONA SIN UNA FUNCIÓN
-
-// `
-
-
+// FIN CREATE CARDS
+// ----------------------------------------------------------------------------------
 // CREACIÓN DE LOS CHECKBOXES (CATEGORIES) CON FUNCIÓN
 
-const container2 = document.getElementById('filter-category')
+const container2 = document.getElementById("filter-category");
 
-function checkboxCreate (array) {
-    let fragment = document.createDocumentFragment();
-    let mapping = array.map(element => element.category);
-    let categories = [...new Set (mapping)];                            // TE PASA EL SET A UN ARRAY
-    categories.forEach(category => {
-        let div = document.createElement('div')
-        div.className = "form-check"
-        div.innerHTML = `<input class="form-check-input" type="checkbox" value=${category} id=${category}/>
-                         <label class="form-check-label" for=${category}> ${category} </label>`
-         fragment.appendChild(div)
-    })
-    return fragment
+function checkboxCreate(array) {
+  let fragment = document.createDocumentFragment();
+  let mapping = array.map((element) => element.category);
+  let categories = [...new Set(mapping)]; // TE PASA EL SET A UN ARRAY
+  categories.forEach((category) => {
+    let div = document.createElement("div");
+    div.className = "form-check";
+    div.innerHTML = `<input class="form-check-input" type="checkbox" value=${category
+      .split(" ")
+      .join("_")} id=${category.split(" ").join("_")}/>
+                         <label class="form-check-label" for=${category}> ${category} </label>`;
+    fragment.appendChild(div);
+  });
+  return fragment;
 }
 
 container2.appendChild(checkboxCreate(data.events));
 
 // FIN DE LOS CHECKBOXES (CATEGORIES) CON FUNCIÓN
+// ----------------------------------------------------------------------------------
+// TASK 3
 
+let inputChecks = [];
+let inputText = "";
 
-// EL QUE FUNCIONA SIN HACER LA FUNCIÓN
+// FILTRADO DE LAS CARDS POR CATEGORYS (CHECKBOXES)
 
-// const container2 = document.getElementById('filter-category')
-// let fragment2 = document.createDocumentFragment();
+let checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-// let mapping = data.events.map(element => element.category) 
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", filterCheckbox);
+});
 
-// let categories = [...new Set (mapping)] // TE PASA EL SET A UN ARRAY
+function filterCheckbox() {
+  inputChecks = Array.from(checkboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((value) => value.value);
+  doubleFilter(data.events);
+}
 
-// categories.forEach(category => {
-//     let div = document.createElement('div')
-//     div.className = "form-check"
-//     div.innerHTML = `<input class="form-check-input" type="checkbox" value=${category} id=${category}/>
-//                     <label class="form-check-label" for=${category}> ${category} </label>`
-//      fragment2.appendChild(div)
-// })
+function filterArray(arrayS, arrayCards) {
+  if (arrayS.length > 0) {
+    return arrayCards.filter((objeto) =>
+      arrayS.includes(objeto.category.split(" ").join("_"))
+    );
+  } else {
+    return arrayCards;
+  }
+}
 
-// container2.appendChild(fragment2);
+// FIN DEL FILTRADO [categories]
+// ----------------------------------------------------------------------------------
+// FILTRADO PERO POR EL BUSCADOR SEARCH
 
-// FIN DEL QUE FUNCIONA SIN HACER LA FUNCIÓN
+let searchNav = document.getElementById("searchNav");
+
+searchNav.addEventListener("keyup", (e) => {
+  inputText = e.target.value;
+  doubleFilter(data.events);
+});
+
+function filterSearch(value, arrayObject) {
+  if (value == "") return arrayObject;
+  let newArray = arrayObject.filter((elemento) =>
+    elemento.name.toLowerCase().includes(value.toLowerCase().trim())
+  );
+  return newArray;
+}
+// FIN FILTRADO PERO POR EL BUSCADOR SEARCH
+// ----------------------------------------------------------------------------------
+// FILTRADO DOBLE
+
+function doubleFilter(array) {
+  let cardsChecked = filterArray(inputChecks, array);
+  let finalFilter = filterSearch(inputText, cardsChecked);
+  cardsCreate(finalFilter, "div-index");
+}
