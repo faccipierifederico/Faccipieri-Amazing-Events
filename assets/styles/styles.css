@@ -190,8 +190,13 @@ input::placeholder {
     padding: 1% 0;
 }
 
+#details-card{
+    margin-top: 10px;
+    width: 50vw !important;
+}
+
 .img-details{
-    margin: 1% 1% 0 1%;
+    width: 50vw;
 }
 
 .details-div ul{
