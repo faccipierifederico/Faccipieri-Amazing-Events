@@ -1,16 +1,79 @@
-const indexDate = Date.parse(data.currentDate);
+let url = 'https://mindhub-xj03.onrender.com/api/amazing'
+
+async function bringData() {
+  try{
+    // traigo todo de la API
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
+    const dataEvents = await data.events
+    console.log(dataEvents);
+
+    // creo un array para filtrar los "before"
+    const indexDate = Date.parse(data.currentDate);
+
+    for (let event of dataEvents) {
+      if (Date.parse(event.date) < indexDate) {
+        before.push(event);
+      }
+    }
+    
+    // llamo a la función que me imprime las tarjetas
+    cardsCreate(before, "div-index");
+
+    // traigo los checkboxes
+    checkboxCreate(dataEvents, "filter-category");
+
+    // hago funcional los checkboxes (filtro 1)
+    let checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", filterCheckbox);
+    });
+
+    function filterCheckbox() {
+      inputChecks = Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((value) => value.value);
+      doubleFilter(before);
+    }
+
+    // hago funcional el search (filtro 2)
+    let searchNav = document.getElementById("searchNav");
+
+    searchNav.addEventListener("keyup", (e) => {
+      inputText = e.target.value;
+      doubleFilter(before);
+    });
+
+    // hago funcional el filtro cruzado (filtro cruzado)
+    function doubleFilter(array) {
+      let cardsChecked = filterArray(inputChecks, array);
+      let finalFilter = filterSearch(inputText, cardsChecked);
+      cardsCreate(finalFilter, "div-index");
+    }
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+bringData();
+
+
+// const indexDate = Date.parse(data.currentDate);
 
 // TRAIGO LAS TARJETAS ANTERIORES A LA FECHA
 // NOTA: intentar traer todo esto por una función
 
 let before = [];
 
-for (let event of data.events) {
-  if (Date.parse(event.date) < indexDate) {
-    before.push(event);
-  }
-}
+// for (let event of data.events) {
+//   if (Date.parse(event.date) < indexDate) {
+//     before.push(event);
+//   }
+// }
 
+// FUNCIÓN QUE ME TRAE LAS CARDS
 function cardsCreate(array, idContainer) {
   let container = document.getElementById(idContainer);
   container.innerHTML = "";
@@ -43,7 +106,7 @@ function cardsCreate(array, idContainer) {
 }
 }
 
-cardsCreate(before, "div-index");
+// cardsCreate(before, "div-index");
 
 // FIN DE TRAER TARJETAS ANTERIORES A LA FECHA
 
@@ -58,16 +121,16 @@ function checkboxCreate(array, idContainer) {
   categories.forEach((category) => {
     let div = document.createElement("div");
     div.className = "form-check";
-    div.innerHTML = `<input class="form-check-input" type="checkbox" value=${category
-      .split(" ")
-      .join("_")} id=${category.split(" ").join("_")}/>
-                         <label class="form-check-label" for=${category}> ${category} </label>`;
+    div.innerHTML = `
+                      <label class="form-check-label"> ${category}
+                      <input class="form-check-input" type="checkbox" value=${category} id=""/>
+                      </label>`;
     fragment.appendChild(div);
   });
   container2.appendChild(fragment);
 }
 
-checkboxCreate(data.events, "filter-category");
+// checkboxCreate(data.events, "filter-category");
 
 // FIN DEL CHECKBOXES
 
@@ -78,18 +141,18 @@ let inputText = "";
 
 // FILTRADO DE LAS CARDS POR CATEGORYS (CHECKBOXES)
 
-let checkboxes = document.querySelectorAll("input[type=checkbox]");
+// let checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", filterCheckbox);
-});
+// checkboxes.forEach((checkbox) => {
+//   checkbox.addEventListener("change", filterCheckbox);
+// });
 
-function filterCheckbox() {
-  inputChecks = Array.from(checkboxes)
-    .filter((checkbox) => checkbox.checked)
-    .map((value) => value.value);
-  doubleFilter(before);
-}
+// function filterCheckbox() {
+//   inputChecks = Array.from(checkboxes)
+//     .filter((checkbox) => checkbox.checked)
+//     .map((value) => value.value);
+//   doubleFilter(before);
+// }
 
 function filterArray(arrayS, arrayCards) {
   if (arrayS.length > 0) {
@@ -105,12 +168,12 @@ function filterArray(arrayS, arrayCards) {
 // ----------------------------------------------------------------------------------
 // FILTRADO PERO POR EL BUSCADOR SEARCH
 
-let searchNav = document.getElementById("searchNav");
+// let searchNav = document.getElementById("searchNav");
 
-searchNav.addEventListener("keyup", (e) => {
-  inputText = e.target.value;
-  doubleFilter(before);
-});
+// searchNav.addEventListener("keyup", (e) => {
+//   inputText = e.target.value;
+//   doubleFilter(before);
+// });
 
 function filterSearch(value, arrayObject) {
   if (value == "") return arrayObject;
@@ -123,8 +186,8 @@ function filterSearch(value, arrayObject) {
 // ----------------------------------------------------------------------------------
 // FILTRADO DOBLE
 
-function doubleFilter(array) {
-  let cardsChecked = filterArray(inputChecks, array);
-  let finalFilter = filterSearch(inputText, cardsChecked);
-  cardsCreate(finalFilter, "div-index");
-}
+// function doubleFilter(array) {
+//   let cardsChecked = filterArray(inputChecks, array);
+//   let finalFilter = filterSearch(inputText, cardsChecked);
+//   cardsCreate(finalFilter, "div-index");
+// }
