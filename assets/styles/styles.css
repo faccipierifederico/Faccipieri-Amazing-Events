@@ -4,27 +4,58 @@
     margin: 0;
 }
 
-.title-header{
-    color: antiquewhite;
-    letter-spacing: 1em;
+/*           ACÁ COMIENZA EL HEADER            */
+
+.text-center{
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
+    background-position: bottom;
+    background-size: cover;
+    color: rgba(255, 208, 1, 0.466);
     padding: 2% 0;
-    display: flex;
-    justify-content: center;
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
+}
+
+.nav-link:hover{
+    transition: 1s;
+    background-color: rgba(255, 208, 1, 0.466);
+    color: black;
+}
+
+.active{
+    text-transform: uppercase;
+    color: rgba(255, 208, 1, 0.466) !important;
+    text-shadow: 1px 1px 1px black;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /*           ACÁ COMIENZA EL FOOTER         */
 
 footer{
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814), rgba(0, 0, 0, 0.814));
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
+    background-position: bottom;
+    background-size: cover;
 }
 
 .sotial-network {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     padding: 1em 0;
-    color: beige;
+    color: rgba(255, 208, 1, 0.466);
+}
+
+.sotial-network i{
+    padding: 0 1em;
+}
+
+.sotial-network-p{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1em 0;
+    color: rgba(255, 208, 1, 0.466);
+    flex-wrap: wrap;
 }
 
 footer div{
@@ -34,10 +65,48 @@ footer div{
 .sotial-network i{
   font-size: 1.5em;
   text-align: center;
-  color: beige;
+  color: rgba(255, 208, 1, 0.466);
 }
 
 /*           FIN DEL FOOTER         */
+
+
+/*            CATEGORIES            */
+
+.form-check-input{
+    background-color: rgb(196, 161, 4);
+}
+
+.form-check-input:checked {
+    background-color: black;
+    border-color: black;
+}
+
+/*          FIN CATEGORIES          */
+
+/*          CARDS                   */
+
+.card{
+    background-color: black;
+    border: none;
+}
+
+.card h5{
+    color:rgba(253, 215, 43, 0.671)
+}
+
+.card-text{
+    color: rgba(255, 208, 1, 0.466);
+    padding: 1em 0;
+}
+
+/*         FIN CARDS                   */
+
+/*          COMIENZA EL CONTACT         */
+
+.form-title{
+    text-align: center;
+}
 
 main .contact-form{
     padding-left: 5%;
@@ -48,70 +117,118 @@ main .d-flex .div-form{
     color: black;
 }
 
+.div-buttons{
+    padding-left: 5% !important;
+
+}
+
 main .d-flex div span{
     color: black;
     background-color: lightgray;
 }
 
-main .main-form{
-    height: 65vh;
+label{
+    color: rgb(167, 137, 1);
 }
 
-.form-check-input{
-    background-color: black;
+input::placeholder {
+    opacity: 0.4 !important;
+    color: black !important;
 }
 
-.active{
-    font-weight: bold;
-    font-size: 18px;
-}
+
+/*                  FIN DEL CONTACT                    */
 
 /*                COMIENZO DE DETAILS                    */
 
-.details-list li{
-    padding: 1em;
-    list-style-type: none;
-    width: 33%;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 5px;
-}
-
 .details-div{
-    border: none;
+    display: flex;
+    flex-direction: column;
 }
 
-.details-span{
-    font-weight: bold;
-    background: none !important;
+.details-div ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
 }
 
-main div img{
-    border-radius: 100px;
+.details-div ul li{
+    color:rgb(196, 161, 4);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1em 3em;
+    width: 50%;
 }
 
 /*                FIN DE DETAILS                    */
 
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
 
+table tr{
+    display: flex;
+    width: 99vw;
+}
+
 .table-th{
-    background-color: antiquewhite;
+    background-color: #000 !important;
+    color: rgba(253, 215, 43, 0.671);
     text-transform: uppercase;
 }
 
 th{
     width: 99vw;
+    border: 1px solid black;
     text-align: center;
 }
 
 td{
     width: 33vw;
     text-align: center;
-}
-
-td, tr{
     border: 1px solid black;
     padding: 1em;
 }
 
 /*           FIN DE LA TABLA DE STATS         */
+
+.navbar-toggler{
+    color: red;
+    background-color: rgb(167, 137, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-div{
+    background-color: #000;
+    color:rgba(253, 215, 43, 0.671);
+    text-align: center;
+}
+
+/*              MEDIA QUERIES                   */
+
+@media only screen and (max-width: 576px) {
+    .footer-span{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 991px) {
+    .nav-link{
+        color: black;
+    }
+
+    td{
+        width: 100vw;
+    }
+
+}
+
+@media only screen and (max-width: 1110px) {
+    .details-div ul li{
+        width: 100%;
+    }
+}
