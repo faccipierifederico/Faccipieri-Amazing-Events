@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Unbounded';
 }
 
 /*           ACÁ COMIENZA EL HEADER            */
@@ -10,8 +11,21 @@
     background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
     background-position: bottom;
     background-size: cover;
+    font-weight: 600;
     color: rgba(255, 208, 1, 0.466);
     padding: 2% 0;
+    margin: 0;
+}
+
+.text-center3{
+    font-weight: 600;
+    color: red;
+    padding: 2% 0;
+    margin: 0;
+}
+
+.search-div{
+    padding-top: 0 !important;
 }
 
 .nav-link:hover{
@@ -56,6 +70,7 @@ footer{
     padding: 1em 0;
     color: rgba(255, 208, 1, 0.466);
     flex-wrap: wrap;
+    margin-bottom: 0;
 }
 
 footer div{
@@ -72,6 +87,10 @@ footer div{
 
 
 /*            CATEGORIES            */
+
+#filter-category{
+    color: black;
+}
 
 .form-check-input{
     background-color: rgb(196, 161, 4);
@@ -95,9 +114,20 @@ footer div{
     color:rgba(253, 215, 43, 0.671)
 }
 
+.img-cards{
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)) !important;
+}
+
 .card-text{
     color: rgba(255, 208, 1, 0.466);
     padding: 1em 0;
+}
+
+.btn-details{
+    margin: 1.5%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
 
 /*         FIN CARDS                   */
@@ -128,12 +158,20 @@ main .d-flex div span{
 }
 
 label{
-    color: rgb(167, 137, 1);
+    color: black;
 }
 
 input::placeholder {
     opacity: 0.4 !important;
     color: black !important;
+}
+
+.form-label{
+    color:rgb(167, 137, 1);
+}
+
+.fitler2{
+    display: none;
 }
 
 
@@ -146,25 +184,52 @@ input::placeholder {
     flex-direction: column;
 }
 
+.h2-details{
+    font-size: 2em;
+    text-align: center;
+    padding: 1% 0;
+}
+
+#details-card{
+    margin-top: 10px;
+    width: 50vw !important;
+}
+
+.img-details{
+    width: 50vw;
+}
+
 .details-div ul{
     display: flex;
     flex-wrap: wrap;
     margin-top: 2em;
+    padding-left: 0 !important;
 }
 
 .details-div ul li{
     color:rgb(196, 161, 4);
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 1em 3em;
+    padding: 1em 0 !important;
     width: 50%;
+    border: 1px solid white;
+}
+
+.p-details{
+    color:rgb(196, 161, 4);
+    text-align: center;
 }
 
 /*                FIN DE DETAILS                    */
 
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
+
+.h2-stats{
+    text-align: center;
+    padding: 3% 0 1% 0;
+}
 
 table tr{
     display: flex;
@@ -174,7 +239,6 @@ table tr{
 .table-th{
     background-color: #000 !important;
     color: rgba(253, 215, 43, 0.671);
-    text-transform: uppercase;
 }
 
 th{
@@ -187,7 +251,7 @@ td{
     width: 33vw;
     text-align: center;
     border: 1px solid black;
-    padding: 1em;
+    padding: 1em !important;
 }
 
 /*           FIN DE LA TABLA DE STATS         */
@@ -205,7 +269,17 @@ td{
     background-color: #000;
     color:rgba(253, 215, 43, 0.671);
     text-align: center;
+    border-radius: 25px !important;
 }
+
+.new-div2:hover{
+    border: 3px solid rgb(167, 137, 1);
+}
+
+.h2-radius{
+    border-radius: 25px 25px 0 0;
+}
+
 
 /*              MEDIA QUERIES                   */
 
