@@ -249,6 +249,7 @@ th{
 
 td{
     width: 33vw;
+    font-size: 18px;
     text-align: center;
     border: 1px solid black;
     padding: 1em !important;
