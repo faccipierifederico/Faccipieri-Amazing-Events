@@ -73,7 +73,6 @@ let after = [];
 //   }
 // }
 
-
 // FUNCIÓN QUE ME TRAE LAS CARDS
 function cardsCreate(array, idContainer) {
   let container = document.getElementById(idContainer);

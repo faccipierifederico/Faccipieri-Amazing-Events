@@ -16,19 +16,19 @@ fetch(urlApi)
     revenueCalculation(events.filter(element => element.assistance), "Food", table2)
     revenueCalculation(events.filter(element => element.estimate), "Food", table2)
 
-    introducirTabla2(events.filter(element => element.estimate), table2)
-    introducirTabla2(events.filter(element => element.assistance), table3)
+    insertTable2(events.filter(element => element.estimate), table2)
+    insertTable2(events.filter(element => element.assistance), table3)
 
   })
   .catch(error => console.log(error))
 
 function loadTable1(array, container) {
 
-  let mayorCapacidad = array.reduce((evento1, evento2) => {
+  let higherCapacity = array.reduce((evento1, evento2) => {
     if (evento1.capacity > evento2.capacity) return evento1
     return evento2
   })
-  console.log(mayorCapacidad)
+  console.log(higherCapacity)
 
   let mayorAttendance = array.filter(elemento => elemento.assistance).reduce((evento1, evento2) => {
     if ((evento1.assistance / evento1.capacity) > (evento2.assistance / evento2.capacity)) return evento1
@@ -46,7 +46,7 @@ function loadTable1(array, container) {
   trContenedor.innerHTML = `
         <td>${mayorAttendance.name}: (${mayorAttendance.assistance / mayorAttendance.capacity * 100}%)</td>
         <td>${menorAttendance.name}: (${menorAttendance.assistance / menorAttendance.capacity * 100}%)</td>
-        <td>${mayorCapacidad.name}: (${mayorCapacidad.capacity})</td>`
+        <td>${higherCapacity.name}: (${higherCapacity.capacity})</td>`
         container.appendChild(trContenedor)
 }
 
@@ -59,7 +59,7 @@ function revenueCalculation(array, nombrecategoria) {
   return arrayFiltrado
 }
 
-function introducirTabla2(array, contenedor) {
+function insertTable2(array, contenedor) {
   //  arreglo de categorias unicas
   let categorias = [... new Set(array.map(elemento => elemento.category))]
 
