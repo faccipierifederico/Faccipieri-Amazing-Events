@@ -72,12 +72,14 @@ function cardsCreate(array, idContainer) {
       "col-md-4",
       "col-lg-3"
     );
-    div.innerHTML = `<h2 class="text-center h2-radius">${event.name}</h2>
+    div.innerHTML = `   <h2 class="text-center2 h2-radius">${event.name}</h2>
                         <img class="h-75 img-cards" src="${event.image}" width="100%"></img>
+                        <div class="new-div3">
                         <p class="new-div">Summary of the event: ${event.description}</p>
                         <div class="d-flex flex-column align-items-center"> 
                         <p class="new-div">Event price: ${event.price} dollars</p>
                         <a href="./details.html?_id=${event._id}" class="btn btn-outline-warning w-75 btn-details">Go to details ➔</a>
+                        </div>
                         </div>`;
     fragment.appendChild(div);
   }
