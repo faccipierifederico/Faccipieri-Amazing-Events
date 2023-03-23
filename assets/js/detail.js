@@ -47,7 +47,7 @@ function details(array, idContainer) {
                         <li class="ul-details">Category: ${array.category}</li>
                         <li class="ul-details">Place: ${array.place}</li>
                         <li class="ul-details">Capacity: ${array.capacity} people</li>
-                        <li class="ul-details">Assistance: ${array.estimate}</li>
+                        <li class="ul-details"> ${array.estimate? "Estimate" : "Assistance"}: ${array.estimate? array.estimate : array.assistance} people</li>
                         <li class="ul-details">Price: ${array.price} USD</li>
                     </ul>
                     </div>

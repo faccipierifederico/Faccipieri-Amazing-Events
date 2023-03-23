@@ -93,7 +93,7 @@ function cardsCreate(array, idContainer) {
       "col-md-4",
       "col-lg-3"
     );
-    div.innerHTML = `<h2 class="text-center h2-radius">${event.name}</h2>
+    div.innerHTML = `<h2 class="text-center2 h2-radius">${event.name}</h2>
                         <img class="h-75 img-cards" src="${event.image}" width="100%"></img>
                         <p class="new-div">Summary of the event: ${event.description}</p>
                         <div class="d-flex flex-column align-items-center"> 

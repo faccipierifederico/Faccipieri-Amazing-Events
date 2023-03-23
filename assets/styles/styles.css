@@ -27,8 +27,8 @@ main{
     background:linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)), url(../img/bg.jpg);
     background-position: bottom;
     background-size: cover;
-    /* font-weight: 600; */
-    color: rgba(255, 208, 1, 0.466);
+    font-weight: 400;
+    color: lightgrey;
     padding: 2% 0;
     margin: 0;
     font-size: 150%;
@@ -245,9 +245,17 @@ input::placeholder {
     text-align: center;
 }
 
+#div-index{
+    padding-bottom: 2em !important;
+}
+
 /*                FIN DE DETAILS                    */
 
 /*           ACÁ COMIENZA LA TABLA DE STATS         */
+
+.table-responsive{
+    padding: 0 2rem;
+}
 
 .h2-stats{
     text-align: center;
@@ -257,7 +265,7 @@ input::placeholder {
 
 table tr{
     display: flex;
-    width: 99vw;
+    /* width: 99vw; */
 }
 
 .table-th{
@@ -266,14 +274,14 @@ table tr{
 }
 
 th{
-    width: 99vw;
+    width: 33%;
     border: 1px solid rgb(196, 161, 4);
     text-align: center;
     font-size: 19px;
 }
 
 td{
-    width: 33vw;
+    width: 33%;
     font-size: 18px;
     text-align: center;
     border: 1px solid rgb(196, 161, 4);
@@ -317,6 +325,10 @@ nav{
     border-radius: 25px 25px 0 0;
 }
 
+.main-contact{
+    min-height: 73vh;
+}
+
 
 /*              MEDIA QUERIES                   */
 
@@ -347,13 +359,23 @@ nav{
         font-size: 1.5em;
     }
     .table-th{
-        font-size: 1em;
+        font-size: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     td{
         font-size: 14px;
+    }
+
+    main .d-flex .div-form{
+        padding: 6% !important;
+    }
+
+}
+@media only screen and (max-width: 740px) {
+    main .d-flex .div-form{
+        padding: 3%;
     }
 }
 
@@ -374,15 +396,17 @@ nav{
         padding: 0 !important;
     }
 
+    .table-responsive{
+        padding: 0;
+    }
+
+
+
 
 }
 @media only screen and (max-width: 991px) {
     .nav-link{
         color: lightgray;
-    }
-
-    td{
-        width: 100vw;
     }
 
 }
