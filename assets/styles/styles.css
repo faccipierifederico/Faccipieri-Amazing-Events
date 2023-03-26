@@ -9,7 +9,6 @@
 
 main{
     background-color: #000000;
-    /* background:linear-gradient(to right, rgba(0, 0, 0, 0.903), rgba(0, 0, 0, 0.937), rgba(4, 4, 4, 0.914)), url(../img/bg5.jpg); */
     background-position: center;
 }
 
@@ -94,10 +93,6 @@ footer{
     margin-bottom: 0;
 }
 
-/* footer div{
-    margin-top: 1em;
-} */
-
 .sotial-network i{
   font-size: 1.5em;
   text-align: center;
@@ -135,10 +130,6 @@ footer{
 .card h5{
     color:rgba(253, 215, 43, 0.671)
 }
-
-/* .img-cards{
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.233), rgba(255, 208, 1, 0.466)) !important;
-} */
 
 .card-text{
     color: rgba(255, 208, 1, 0.466);
@@ -265,7 +256,6 @@ input::placeholder {
 
 table tr{
     display: flex;
-    /* width: 99vw; */
 }
 
 .table-th{
@@ -310,12 +300,6 @@ nav{
     text-align: center;
     border-radius: 25px !important;
 }
-
-/* .new-div3{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly !important;
-} */
 
 .new-div2:hover{
     border: 3px solid rgb(167, 137, 1);
